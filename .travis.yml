@@ -1,0 +1,15 @@
+# language: node_js # 升级版本需要依赖 npm
+# node_js: stable
+
+install: true # 用来指定安装脚本， 无需安装依赖，true 跳过安装
+
+branches:
+  only:
+  - master # 只发布 master 分支
+
+before_script:
+- git config --global user.name "cl9000" # 配置 travis git 信息
+- git config --global user.email "cl9000@126.com"
+
+script: # 指定构建或测试运行脚本
+- git push -f $GITHUB_URL HEAD:master # 将新版本文件推送回 Github
