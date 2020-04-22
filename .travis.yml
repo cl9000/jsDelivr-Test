@@ -8,7 +8,7 @@ branches:
   - master # 只发布 master 分支
 
 before_script:
-- git config --global user.name "cl9000" # 配置 travis git 信息
+- git config --global user.name "weichanglu" # 配置 travis git 信息
 - git config --global user.email "cl9000@126.com"
 
 script: # 指定构建或测试运行脚本
