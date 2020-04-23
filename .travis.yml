@@ -1,0 +1,8 @@
+deploy:
+provider: releases
+user: "cl9000"
+password: "wei439CL900"
+file: "223"
+skip_cleanup: true
+on:
+  tags: true
