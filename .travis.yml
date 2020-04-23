@@ -1,10 +1,7 @@
+before_deploy: "echo ready? =============="
 deploy:
   provider: releases
   api_key:
     secure: ${GH_TOKEN}
-  file: jsDelivr-Test.tar.gz
-  file_glob: true
   cleanup: true
-  on:
-    tags: false
 
