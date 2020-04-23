@@ -1,5 +1,5 @@
 language: ruby
-script:  zip -r ./*.zip ./*
+script:  "zip -r ./*.zip ./*"
 deploy:
   provider: releases
   api_key:
