@@ -3,7 +3,7 @@ deploy:
   provider: releases
   api_key:
     secure: ${GH_TOKEN}
-  file: *.tar.gz
+  file: jsDelivr-Test.tar.gz
   file_glob: true
   cleanup: true
   on:
