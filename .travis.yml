@@ -1,4 +1,7 @@
 language: ruby
+dist: trusty
+rvm:
+  - rbx-3
 deploy:
   provider: releases
   api_key:
