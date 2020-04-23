@@ -1,4 +1,6 @@
 
+
+before_deploy: zip -r jsDelivr-Test.zip ./*
 deploy:
   provider: releases
   api_key:
