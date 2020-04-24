@@ -1,4 +1,3 @@
-sudo: false # 使用容器进行编译，速度更快
 dist: trusty # 编译的操作系统是 ubuntu trusty，目前还不支持 xenial 或更高版本
 language: go # 表示 repo 是一个 go 项目
 go: 1.10.x # 指定编译时的 go 版本号
@@ -7,8 +6,8 @@ script: "" # 先检查格式，然后编译
 before_deploy: "echo ready? =============="
 deploy:
   provider: releases
-  api_key:
-    secure: "sLxHZQVNJ9RUvCp7qKCP+sU9AcavgJjFdvG9QAHlo6HxQus9ys+qi39GkdsngRe7ICR4Rp0ELlAI508SRdP7QoP6EmiAYxkDwLiXrT9fCiB4nefMCc3anrqs1bR4vXQLp/CwFWo+q7c3/jN4TmIKE70gHpeAJJwn5eKJKTKyWD7b1poBQFinntc9HoyaJSOjxps8lhD9Y8jqzHK6Z0QNBwkXnP+G320DhXxBtt0XtuSPmbTqmRmPCKlyhAUI3QKwS7fPOZxb8CTsApwp5jOlhVkN2lg7Ops2NEgNqe8r5xG3tvjCBC6CgpTeT4MiRqHB7XgGJB4ZXuAtB7uT1WtBFoF8ZkkrTB7JHLaNRhvqoO18jkaQyCBf7Yc3B81FkRFfGZ8kfm5LaPuTEVZY6lWLu9hQdaULN+2iCIy5WNqJ6Bn88hgf/1Zgifjrp+1YW8lFRQHODTONRI400UMOFyQjo9yu7DLtUvKbGhN3xRJ2MgL5AhJtTc0ejAjER1BxLBTKKgxYGTdKLo0UxntmM9eL8QVVs7yurz9VtEpvud8wxpVseI2xtvV9sNSgH/i5T7UWvQiJX8I+Pf9K4UYmLBk63x0Ewnd7ZJZKAUyscvNmvCSQxSWcTTpLOHZGM4g5SGLR7MZC+VDp2w0zMHdjXIPITOthuGk3GZmOBYVJvGacKals="
-  file: jsDelivr-Test # 可执行文件路径
+  api_key: ${GH_TOKEN}
+  file: 
+    -jsDelivr-Test.zip # 可执行文件路径
   cleanup: true
 
