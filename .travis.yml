@@ -27,7 +27,6 @@ deploy:
   draft: false # 不发表drafs
   on:
     repo: cl9000/jsDelivr-Test
-    all_branches: true
     tags: true # tags 设置为 true 表示只有在有 tag 的情况下才部署
 
 env:
