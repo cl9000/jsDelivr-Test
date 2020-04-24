@@ -9,6 +9,6 @@ deploy:
   provider: releases
   api_key:
     secure: ${GH_TOKEN}
+  file: jsDelivr-Test # 可执行文件路径
   cleanup: true
-  file: jsDelivr-Test.tar.gz # 可执行文件路径
 
