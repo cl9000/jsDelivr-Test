@@ -6,9 +6,9 @@ before_deploy: "echo ready? =============="
 deploy:
   provider: releases
   api_key: ${GH_TOKEN}
-  file: 
-    - jsDelivr-Test.zip
+  file: jsDelivr-Test.zip
   cleanup: true
   on:
-    branch: master
+    repo: cl9000/jsDelivr-Test
+    all_branches: true
 
