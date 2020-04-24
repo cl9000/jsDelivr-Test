@@ -4,25 +4,31 @@ notifications:      # 每次构建的时候是否邮件通知
 language: go # 表示 repo 是一个 go 项目
 go: 1.10.x # 指定编译时的 go 版本号
 
+before_install: "echo before_install ===="
 install: true # 跳过 install 阶段，因为已经定义了 before_install
+
 before_script: "echo before_script ===="
 script: "" # 执行脚本
+
 before_deploy: "echo ready? - before_deploy ===="
 after_deploy: "echo end! - after_deploy ====="
+
 branches: # 指定分支，只有指定的分支提交时才会运行脚本
   only:
     - master
+
 deploy:
   provider: releases # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
-  api_key:
-    secure: ${GH_TOKEN} # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
-  file: jsDelivr-Test.zip
-  skip_cleanup: true
+  api_key: # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
+    secure: ${GH_TOKEN} 
+  file: jsDelivr-Test.zip # 部署文件路径
+  skip_cleanup: true  # 设置为 true 以跳过清理
   draft: true # 不发表drafs
   on:
     repo: cl9000/jsDelivr-Test
     all_branches: true
-    tags: true # 发布tag版本才进行发包
+    tags: true # tags 设置为 true 表示只有在有 tag 的情况下才部署
+
 env:
   global:
     # 将其添加到了travis-ci的环境变量中
