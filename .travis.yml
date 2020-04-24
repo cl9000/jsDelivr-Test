@@ -1,3 +1,5 @@
+sudo: false
+dist: xenial # 编译的操作系统是 ubuntu trusty，目前还不支持 xenial 或更高版本
 language: node_js
 node_js:
   - "7"
