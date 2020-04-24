@@ -5,10 +5,10 @@ language: go # 表示 repo 是一个 go 项目
 go: 1.10.x # 指定编译时的 go 版本号
 
 install: true # 跳过 install 阶段，因为已经定义了 before_install
-before_script: "echo before_script ====>>>>"
+before_script: "echo before_script ===="
 script: "" # 执行脚本
-before_deploy: "echo ready? - before_deploy ====>>>>"
-after_deploy: "echo end! - after_deploy =====>>>>"
+before_deploy: "echo ready? - before_deploy ===="
+after_deploy: "echo end! - after_deploy ====="
 branches: # 指定分支，只有指定的分支提交时才会运行脚本
   only:
     - master
