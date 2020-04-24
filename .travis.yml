@@ -19,8 +19,9 @@ branches: # 指定分支，只有指定的分支提交时才会运行脚本
 
 deploy:
   provider: releases # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
-  api_key: # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
-    secure: ${GH_TOKEN} 
+  api_key: ${GH_TOKEN}
+  # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
+    #secure: ${GH_TOKEN} 
   file: jsDelivr-Test.zip # 部署文件路径
   skip_cleanup: true  # 设置为 true 以跳过清理
   draft: false # 不发表drafs
