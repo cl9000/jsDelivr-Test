@@ -4,10 +4,10 @@ notifications:      # 每次构建的时候是否邮件通知
 language: go # 表示 repo 是一个 go 项目
 go: 1.10.x # 指定编译时的 go 版本号
 
-before_install: "echo before_install ===="
+before_install: "echo before_install ==="
 install: true # 跳过 install 阶段，因为已经定义了 before_install
 
-before_script: "echo before_script ===="
+before_script: "echo before_script ==="
 script: "" # 执行脚本
 
 before_deploy: "echo ready? - before_deploy ===="
