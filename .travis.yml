@@ -13,9 +13,6 @@ script: "" # 执行脚本
 before_deploy: "echo ready? - before_deploy ===="
 after_deploy: "echo end! - after_deploy ====="
 
-branches: # 指定分支，只有指定的分支提交时才会运行脚本
-  only:
-    - master
 
 deploy:
   provider: releases # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
