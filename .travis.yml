@@ -1,4 +1,3 @@
-dist: trusty # 编译的操作系统是 ubuntu trusty，目前还不支持 xenial 或更高版本
 language: go # 表示 repo 是一个 go 项目
 go: 1.10.x # 指定编译时的 go 版本号
 install: true # 跳过 install 阶段，因为我已经定义了 before_install。其实 go 项目是需要安装依赖的，只是我放到了下面的 make mycli 命令中做
@@ -8,6 +7,8 @@ deploy:
   provider: releases
   api_key: ${GH_TOKEN}
   file: 
-    -jsDelivr-Test.zip # 可执行文件路径
+    - jsDelivr-Test.zip
   cleanup: true
+  on:
+    branch: master
 
