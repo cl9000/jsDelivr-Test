@@ -16,10 +16,10 @@ after_deploy: "echo end! - after_deploy ====="
 
 deploy:
   provider: releases # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
-  # api_key: ${GH_TOKEN} # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
-  api_key:
+  api_key: ${GH_TOKEN} # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
+  # api_key:
     # secure: "GuH73nqFGRjOLL8me8/upKFBaro8pDMYogvDhK3McMbCH3A4uW68Sx9BRHMXbF67VU0Zmd4rh2kS6zF2NodiLK9HQHydUD4s4l1vwGQ4Hi67zXH3XSPVhMTx3SKLrO7gDmKha9npd/6g8A0gQL9H+XAsqTvcNCVCAfkqOV58DxEFHEQZFlgQawDTwhi3LFacrN2RfjtSzAx0MNHFW/2FTH8QAdYqTHCw/H8HIYg1PsheMVVKwBXgWPO4fXDAo5r7nJT95FR2NsI8sm2smeVp+aQ3jf32TSOIxNppn4qYh6qT307EmOkO4WKHWOWfH/WEyqx65336v6ltw8hQiQXcKXv/iwp69Zyvjva8Lq1pXRiB38oVSVyRRvTByqEMj2pyXNCBufM106YsfhAuB2V+9JwPvW3JRR+9qi68WzkpDE7BaB6oyTBoj4Plu/qf3aIdR02dxt1E+nLrAB42tWWbCUIqhnhhZ4yArjYa3v6S+u+BREIBLyM1ZBa2MQ7D3UwtRCIYbVfI9aJq2IjWOV9Fo4si7l3/muSbmeCJ5alulLQNMLK6eN/GKTfKhok5ajVb3YuzcAf24VZPDsdFfTQ2SbKfY9uER0rvwi5OV0T+yVbJAeMkk5Pvt58au1m/psiPPlAqNMwHT/bb2OZyNPgV6e7wATLpPfN8r9wS07GFP0s="
-    secure: ${GH_TOKEN} # 使用 Travis 对token进行的加密
+    # secure: ${GH_TOKEN} # (Octokit::Unauthorized) 使用 Travis 对token进行的加密
   file: jsDelivr-Test.zip # 部署文件路径
   skip_cleanup: true  # 设置为 true 以跳过清理
   draft: false # 不发表drafs
@@ -29,5 +29,5 @@ deploy:
 
 env:
   global:
-    # 将其添加到了travis-ci的环境变量中
+    # 将其添加到 Travis 的环境变量中
     # - GH_URL: github.com:cl9000/jsDelivr-Test.git
