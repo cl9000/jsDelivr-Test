@@ -13,7 +13,6 @@ script: "" # 执行脚本
 before_deploy: "echo ready? - before_deploy ===="
 after_deploy: "echo end! - after_deploy ====="
 
-
 deploy:
   provider: releases # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
   api_key: ${GH_TOKEN} # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
@@ -22,7 +21,7 @@ deploy:
     # secure: ${GH_TOKEN} # (Octokit::Unauthorized) 使用 Travis 对token进行的加密
   file: jsDelivr-Test.zip # 部署文件路径
   skip_cleanup: true  # 设置为 true 以跳过清理
-  draft: false # 不发表drafs
+  draft: true # 不发表drafs
   on:
     repo: cl9000/jsDelivr-Test
     tags: true # tags 设置为 true 表示只有在有 tag 的情况下才部署
